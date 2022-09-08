@@ -1,24 +1,20 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+// Pages & Components
+import Home from './pages/Home';
+import Navbar from './components/Navbar';
 
-import React from "react";
-
-import "./App.css";
 
 function App() {
-  const [data, setData] = React.useState(null);
-
-  React.useEffect(() => {
-    fetch("/api")
-      .then((res) => res.json())
-      .then((data) => setData(data.message));
-  }, []);
-
   return (
     <div className="App">
-      <header className="App-header">
-        <p>{!data ? "Loading..." : data}</p>
-        <h1>Very cool</h1>
-
-      </header>
+      <BrowserRouter>
+        <Navbar />
+        <div className="pages">
+          <Routes>
+            <Route path="/" element={<Home />} />
+          </Routes>
+        </div>
+      </BrowserRouter>
     </div>
   );
 }
