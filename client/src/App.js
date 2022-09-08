@@ -1,7 +1,6 @@
-// client/src/App.js
 
 import React from "react";
-import logo from "./logo.svg";
+
 import "./App.css";
 
 function App() {
@@ -18,7 +17,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>{!data ? "Loading..." : data}</p>
-        <h1>cool</h1>
+        <h1>Very cool</h1>
 
       </header>
     </div>
